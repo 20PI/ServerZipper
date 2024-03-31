@@ -9,5 +9,5 @@ commands:
     description: Zip the whole server
     permission: zipper.zip
   upload:
-    description: upload
+    description: Uplaod the provided file to filebin.net
     permission: zipper.upload
