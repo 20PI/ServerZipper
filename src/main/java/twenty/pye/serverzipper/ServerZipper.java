@@ -41,6 +41,10 @@ public final class ServerZipper extends JavaPlugin implements CommandExecutor {
                     sender.sendMessage(ChatColor.YELLOW + "Attempting to zip provided file...");
                     zipFileAsync(fileToProcess, fileToProcess.getParentFile().getPath() + "/" + fileToProcess.getName() + ".zip", sender);
                 } else {
+                    if (fileToProcess.isDirectory()) {
+                        sender.sendMessage(ChatColor.RED + "You cannot upload a directory!");
+                        return false;
+                    }
                     sender.sendMessage(ChatColor.YELLOW + "Attempting to upload file...");
                     uploadFileAsync("serverzipper", "serverzipper" + generateRandomString(6), fileToProcess.getName(), fileToProcess, sender);
                 }
