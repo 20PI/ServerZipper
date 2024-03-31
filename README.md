@@ -1,5 +1,7 @@
 <h1>Simple plugin to zip server files</h1>
 
 Commands:
- - /zip (path)
- - /zipserver
+ - /zip (path) | Zips the provided file
+ - /zipserver | Zips the entire server
+ - /upload (path) | uploads the provided file to filebin.net
+
