@@ -1,5 +1,6 @@
 package twenty.pye.serverzipper;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -34,10 +35,10 @@ public final class ServerZipper extends JavaPlugin implements CommandExecutor {
             }
 
             sender.sendMessage(ChatColor.YELLOW + "Attempting to zip provided file...");
-            zipAsync(toZip, toZip.getParentFile().getPath() + toZip.getName() + ".zip", sender);
+            zipAsync(toZip, toZip.getParentFile().getPath() + "/" + toZip.getName() + ".zip", sender);
         } else if (label.equalsIgnoreCase("zipserver")) {
             sender.sendMessage(ChatColor.YELLOW + "Attempting to zip server...");
-            zipAsync(getServer().getWorldContainer(), getServer().getWorldContainer().getPath() + "server.zip", sender);
+            zipAsync(getServer().getWorldContainer(),   ".server.zip", sender);
         }
 
         return false;
@@ -86,6 +87,11 @@ public final class ServerZipper extends JavaPlugin implements CommandExecutor {
     }
 
     private void zipFile(File fileToZip, String fileName, ZipOutputStream zos) throws IOException {
+
+        if (fileToZip.getName().equalsIgnoreCase(".server.zip")) {
+            return;
+        }
+
         FileInputStream fis = new FileInputStream(fileToZip);
         ZipEntry zipEntry = new ZipEntry(fileName);
         zos.putNextEntry(zipEntry);
