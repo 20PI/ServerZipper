@@ -93,6 +93,7 @@ public final class ServerZipper extends JavaPlugin implements CommandExecutor {
                 Bukkit.getLogger().warning("File upload failed. Response code: " + statusCode);
             }
         } catch (IOException e) {
+            sender.sendMessage(ChatColor.RED + "File upload failed, please check console!");
             Bukkit.getLogger().severe("An error occurred while uploading the file: " + e.getMessage());
         }
     }
