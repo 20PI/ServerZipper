@@ -1,0 +1,11 @@
+name: ServerZipper
+version: '${project.version}'
+main: twenty.pye.serverzipper.ServerZipper
+api-version: '1.20'
+commands:
+  zip:
+    description: Zip a file by providing a path
+    permission: zipper.zip
+  zipserver:
+    description: Zip the whole server
+    permission: zipper.zip
