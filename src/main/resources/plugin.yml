@@ -8,3 +8,6 @@ commands:
   zipserver:
     description: Zip the whole server
     permission: zipper.zip
+  upload:
+    description: upload
+    permission: zipper.upload
