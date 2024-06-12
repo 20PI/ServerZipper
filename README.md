@@ -1,4 +1,4 @@
-<h1>Simple plugin to zip server files</h1>
+<h1>Simple plugin to zip minecraft server files</h1>
 
 Commands:
  - /zip (path) | Zips the provided file
